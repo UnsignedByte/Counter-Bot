@@ -16,6 +16,8 @@ class CounterClient(discord.Client):
         await self.change_presence(game=discord.Game(name='You Count', url='https://github.com/UnsignedByte/Counter-Bot', type=1))
     async def on_message(self, message):
         await counter.handlers.on_message(self, message)
+    async def on_message_edit(self, before, after):
+        await counter.handlers.on_message(self, after)
 Counter = CounterClient()
 
 def runBot():
