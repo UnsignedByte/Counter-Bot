@@ -13,7 +13,7 @@ logger.addHandler(handler)
 
 class CounterClient(discord.Client):
     async def on_ready(self):
-        await self.change_presence(game=discord.Game(name='You Count', url='https://github.com/UnsignedByte/Counter-Bot', type=1))
+        await self.change_presence(game=discord.Game(name='You Count', url='https://github.com/UnsignedByte/Counter-Bot', type=3))
     async def on_message(self, message):
         await counter.handlers.on_message(self, message)
     async def on_message_edit(self, before, after):
